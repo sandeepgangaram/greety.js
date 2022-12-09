@@ -30,6 +30,14 @@
         throw "Language not supported";
       }
     },
+
+    greeting: function () {
+      return greetings[this.language] + " " + this.firstName;
+    },
+
+    formalGreeting: function () {
+      return formalGreetings[this.language] + ", " + this.fullName();
+    },
   };
 
   Greety.init = function (firstName, lastName, language) {
