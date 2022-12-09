@@ -20,7 +20,17 @@
     es: "Inció sesión",
   };
 
-  Greety.prototype = {};
+  Greety.prototype = {
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    },
+
+    validateLang: function () {
+      if (supportedLanguages.indexOf(this.language) === -1) {
+        throw "Language not supported";
+      }
+    },
+  };
 
   Greety.init = function (firstName, lastName, language) {
     var self = this;
