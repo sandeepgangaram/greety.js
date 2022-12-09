@@ -66,8 +66,8 @@
     },
 
     setLang: function (lang) {
+      this.validateLang.call({ language: lang });
       this.language = lang;
-      this.validateLang();
       return this;
     },
   };
