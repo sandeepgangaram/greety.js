@@ -3,6 +3,18 @@
     return new Greety.init(firstName, lastName, language);
   };
 
+  var supportedLanguages = ["en", "es"];
+
+  var greetings = {
+    en: "Hello",
+    es: "Hola",
+  };
+
+  var formalGreetings = {
+    en: "Greetings",
+    es: "Saludos",
+  };
+
   Greety.prototype = {};
 
   Greety.init = function (firstName, lastName, language) {
