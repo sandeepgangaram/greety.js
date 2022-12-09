@@ -58,6 +58,12 @@
       // this (pun intended) makes the method chainable
       return this;
     },
+
+    log: function () {
+      if (console) {
+        console.log(logMessages[this.language] + ":" + this.fullName());
+      }
+    },
   };
 
   Greety.init = function (firstName, lastName, language) {
