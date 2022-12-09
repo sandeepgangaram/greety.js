@@ -38,6 +38,26 @@
     formalGreeting: function () {
       return formalGreetings[this.language] + ", " + this.fullName();
     },
+
+    greet: function (formal) {
+      var msg;
+      //if undefined or null formal will be coerced to false
+      if (formal) {
+        msg = this.formalGreeting();
+      } else {
+        msg = this.greeting();
+      }
+
+      //check if console object exists on window
+      //Ex:- IE has console only when console is open
+      if (console) {
+        console.log(msg);
+      }
+
+      //'this' refers to the calling object at execution time
+      // this (pun intended) makes the method chainable
+      return this;
+    },
   };
 
   Greety.init = function (firstName, lastName, language) {
