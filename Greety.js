@@ -64,6 +64,12 @@
         console.log(logMessages[this.language] + ":" + this.fullName());
       }
     },
+
+    setLang: function (lang) {
+      this.language = lang;
+      this.validateLang();
+      return this;
+    },
   };
 
   Greety.init = function (firstName, lastName, language) {
