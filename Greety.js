@@ -15,6 +15,11 @@
     es: "Saludos",
   };
 
+  var logMessages = {
+    en: "Logged In",
+    es: "Inció sesión",
+  };
+
   Greety.prototype = {};
 
   Greety.init = function (firstName, lastName, language) {
