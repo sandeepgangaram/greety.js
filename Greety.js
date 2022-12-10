@@ -70,6 +70,30 @@
       this.language = lang;
       return this;
     },
+
+    renderGreeting: function (selector, formal) {
+      if (!$) {
+        throw "jQuery Not Loaded";
+      }
+
+      if (!selector) {
+        throw "Missing Selector";
+      }
+
+      var msg;
+      if (formal) {
+        msg = this.formalGreeting();
+      } else {
+        msg = this.greeting();
+      }
+
+      var element = $(selector);
+      if (element) {
+        $(selector).html(msg);
+      }
+
+      return this;
+    },
   };
 
   Greety.init = function (firstName, lastName, language) {
