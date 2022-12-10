@@ -32,16 +32,16 @@
       return this.firstName + " " + this.lastName;
     },
 
-    //check that input is a valid language
+    // check that input is a valid language
     validateLang: function () {
-      //references the externally inaccessible 'supportedLanguages'
-      //within the closure
+      // references the externally inaccessible 'supportedLanguages'
+      // within the closure
       if (supportedLanguages.indexOf(this.language) === -1) {
         throw "Language not supported";
       }
     },
 
-    //retrieve messages from greetings object accessible whithin closure
+    // retrieve messages from greetings object accessible whithin closure
     greeting: function () {
       return greetings[this.language] + " " + this.firstName;
     },
@@ -54,20 +54,20 @@
     greet: function (formal) {
       var msg;
 
-      //if undefined or null formal will be coerced to false
+      // if undefined or null formal will be coerced to false
       if (formal) {
         msg = this.formalGreeting();
       } else {
         msg = this.greeting();
       }
 
-      //check if console object exists on window
-      //Ex:- IE has console only when console is open
+      // check if console object exists on window
+      // Ex:- IE has console only when console is open
       if (console) {
         console.log(msg);
       }
 
-      //'this' refers to the calling object at execution time
+      // 'this' refers to the calling object at execution time
       // this (pun intended) makes the method chainable
       return this;
     },
@@ -81,10 +81,10 @@
     },
 
     setLang: function (lang) {
-      //validate input language
+      // validate input language
       this.validateLang.call({ language: lang });
 
-      //set the language
+      // set the language
       this.language = lang;
 
       return this;
@@ -99,7 +99,7 @@
         throw "Missing Selector";
       }
 
-      //compute message
+      // compute message
       var msg;
       if (formal) {
         msg = this.formalGreeting();
@@ -107,9 +107,9 @@
         msg = this.greeting();
       }
 
-      //check selected element
-      //if element exists
-      //inject the message into DOM
+      // check selected element
+      // if element exists
+      // inject the message into DOM
       var element = $(selector);
       if (element) {
         $(selector).html(msg);
